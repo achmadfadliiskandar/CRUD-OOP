@@ -16,7 +16,7 @@
     alert("harus di isi lengkap");
     return false;
     }
-    // end
+    // end validasi selain no ktp
     // untuk validasi no ktp warga
     let y = document.forms["format"]["no_ktp"].value;
     if (y == "") {
