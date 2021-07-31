@@ -24,7 +24,7 @@
         return false;
     }
     }
-    // end validasi no ktp warga
+    // akhir validasi no ktp warga
     // untuk inputan hanya boleh angka
     function hanyaAngka(evt) {
     var charCode = (evt.which) ? evt.which : event.keyCode
