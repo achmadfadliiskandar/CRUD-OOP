@@ -11,14 +11,14 @@ Class MyDb {
     }
     public function show()
     {
-        $query = $this->db->prepare("SELECT * FROM data_warga");
+        $query = $this->db->prepare("SELECT * FROM database_warga");
         $query->execute();
         $data = $query->fetchAll();
         return $data;
     }
     public function add_data($no_ktp,$nama_lengkap,$alamat_lengkap,$no_hp)
     {
-        $data = $this->db->prepare('INSERT INTO data_warga (no_ktp,nama_lengkap,alamat_lengkap,no_hp) VALUES (?, ?, ?, ?)');
+        $data = $this->db->prepare('INSERT INTO database_warga (no_ktp,nama_lengkap,alamat_lengkap,no_hp) VALUES (?, ?, ?, ?)');
         
         $data->bindParam(1, $no_ktp);
         $data->bindParam(2, $nama_lengkap);
@@ -28,7 +28,7 @@ Class MyDb {
         return $data->rowCount();
     }
     public function update($no_ktp,$nama_lengkap,$alamat_lengkap,$no_hp,$id){
-        $query = $this->db->prepare("UPDATE data_warga SET no_ktp=?,nama_lengkap=?,alamat_lengkap=?,no_hp=? WHERE id=?");
+        $query = $this->db->prepare("UPDATE database_warga SET no_ktp=?,nama_lengkap=?,alamat_lengkap=?,no_hp=? WHERE id=?");
         $query->bindParam(1, $no_ktp);
         $query->bindParam(2, $nama_lengkap);
         $query->bindParam(3, $alamat_lengkap);
@@ -38,14 +38,14 @@ Class MyDb {
         return $query->rowCount();
     }
     public function get_by_id($id_warga){
-        $query = $this->db->prepare("SELECT * FROM data_warga where id=?");
+        $query = $this->db->prepare("SELECT * FROM database_warga where id=?");
         $query->bindParam(1, $id_warga);
         $query->execute();
         return $query->fetch();
     }
     public function delete($id_warga)
     {
-        $query = $this->db->prepare("DELETE FROM data_warga where id=?");
+        $query = $this->db->prepare("DELETE FROM database_warga where id=?");
         $query->bindParam(1, $id_warga);
         $query->execute();
         return $query->rowCount();
