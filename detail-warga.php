@@ -48,46 +48,8 @@ $data=$Db->get_by_id($idwarga);
             </tr>
         </table>
         </div>
-        <div class="col-sm-4">
-        <h2>Form Edit Warga</h2>
-        <hr>
-        <form method="post" action="index.php">
-                    <div class="form-group row">
-                        <label for="no_ktp" class="col-sm-2 col-form-label">No ktp :</label>
-                        <div class="col-sm-9">
-                        <input type="number" name="id" class="form-control" style="display: none;" id="no_ktp" value="<?=  $data['id'];?>" required>
-                        <input type="number" name="no_ktp" class="form-control" id="no_ktp" value="<?=  $data['no_ktp'];?>" required>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group row">
-                        <label for="nama_lengkap" class="col-sm-2 col-form-label">Nama lengkap :</label>
-                        <div class="col-sm-9">
-                            <input type="text" name="nama_lengkap" class="form-control" id="nama_lengkap" value="<?=  $data['nama_lengkap'];?>" required>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group row">
-                        <label for="alamat_lengkap" class="col-sm-2 col-form-label">Alamat :</label>
-                        <div class="col-sm-9">
-                        <input type="text" class="form-control" name="alamat_lengkap" id="alamat_lengkap" cols="30" rows="10" value="<?= $data['alamat_lengkap'];?>" required>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group row">
-                        <label for="no_hp" class="col-sm-2 col-form-label">No Hp :</label>
-                        <div class="col-sm-9">
-                            <input type="number" name="no_hp" class="form-control" id="no_hp" value="<?=  $data['no_hp'];?>" required>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="form-group row">
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-success btn-block" name="update" value="update" type="submit">Ubah</button>
-                        </div>
-                    </div>
-                </form>
-        </div>
+        <!-- <div class="col-sm-4">
+        </div> -->
     </div>
     </div>
 </body>

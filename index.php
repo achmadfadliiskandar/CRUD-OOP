@@ -46,9 +46,9 @@ if (isset($_POST['update'])) {
     $nama = $_POST['nama_lengkap'];
     $alamat = $_POST['alamat_lengkap'];
     $nohp = $_POST['no_hp'];
-    $querysimpan = $Db->update($noktp,$nama,$alamat,$nohp,$id);
+    $querysimpanupdate = $Db->update($noktp,$nama,$alamat,$nohp,$id);
     // var_dump($_POST);
-    if ($querysimpan) {
+    if ($querysimpanupdate==TRUE) {
     $pesansimpanupdate = "Data Berhasil Di Update";
     } else {
     $pesansimpanupdate = "Data Gagal Terupdate";
@@ -76,6 +76,18 @@ if (isset($_POST['update'])) {
     <div class="alert alert-danger"><?php echo $pesanhapus; ?></div>
     <?php 
     }
+?>
+<?php
+if (isset($_POST['update'])) {
+?>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+<strong>selamat</strong> <?php echo $pesansimpanupdate ?>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+</button>
+</div>
+<?php
+}
 ?>
         <table class="table table-bordered">
         <tr>
@@ -105,6 +117,7 @@ if (isset($_POST['update'])) {
             <td><?php echo $data['no_hp']; ?></td>
             <td>
             <a class="btn btn-primary" href="detail-warga.php?id=<?php echo $data['id']; ?>">detail</a> 
+            <a class="btn btn-warning" href="edit.php?id=<?php echo $data['id']; ?>">Edit</a> 
             <a class="btn btn-danger" href="index.php?hapus=<?php echo $data['id']; ?>" onclick="return confirm('yakin ingin di hapus')">Hapus</a>
             </td>
         </tr>

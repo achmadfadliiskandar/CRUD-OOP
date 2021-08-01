@@ -3,7 +3,7 @@ Class MyDb {
     public function __construct()
     {
         $host = "localhost";
-        $dbname = "db_warga";
+        $dbname = "phpoop";
         $username = "root";
         $password = "";
         //metode PDO
@@ -28,11 +28,12 @@ Class MyDb {
         return $data->rowCount();
     }
     public function update($no_ktp,$nama_lengkap,$alamat_lengkap,$no_hp,$id){
-        $query = $this->db->prepare("UPDATE data_warga set no_ktp=?,nama_lengkap=?,alamat_lengkap=?,no_hp=? where id=?");
+        $query = $this->db->prepare("UPDATE data_warga SET no_ktp=?,nama_lengkap=?,alamat_lengkap=?,no_hp=? WHERE id=?");
         $query->bindParam(1, $no_ktp);
         $query->bindParam(2, $nama_lengkap);
         $query->bindParam(3, $alamat_lengkap);
         $query->bindParam(4, $no_hp);
+        $query->bindParam(5, $id);
         $query->execute();
         return $query->rowCount();
     }
